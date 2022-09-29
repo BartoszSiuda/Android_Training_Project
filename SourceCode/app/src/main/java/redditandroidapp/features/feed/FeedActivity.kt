@@ -42,7 +42,7 @@ class FeedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        inputBartka()
+        inputBartka(24)
 
 //        app_title.setContent { MdcTheme { AppTitle() } }
 //        loading_header.setContent { MdcTheme { LoadingHeader() } }
@@ -63,17 +63,26 @@ class FeedActivity : AppCompatActivity() {
 
 
 
-    private fun inputBartka() {
+    private fun inputBartka(temperature: Int) {
+//        var pudelko_01: String = "PRZEMEK SZUMLINSKI"
+//        val pudelko_02: String = "KAMIL CZOP"
+//
+//        pudelko_01 = "ZMIANKA 1"
+////        pudelko_02 = "ZMIANKA 2"
+//
+//        printToDisplay(pudelko_01)
+//        printToLog(pudelko_02)
 
 
+        val LIMIT = 27
+        val message1 = "TOO HOT"
+        val message2 = "TOO COLD"
 
-        printToDisplay("TEST 123")
-        printToDisplay("RAFAL OZOG")
-        printToDisplay("PRZEMEK SZUMLISNKI")
-
-        printToLog("TEST 123")
-        printToLog("RAFAL OZOG")
-        printToLog("PRZEMEK SZUMLINSKI")
+        if (temperature <= LIMIT) {
+            printToDisplay(message2)
+        } else {
+            printToDisplay(message1)
+        }
 
 
 
