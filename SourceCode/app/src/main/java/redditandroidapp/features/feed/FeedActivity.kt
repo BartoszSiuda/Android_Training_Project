@@ -2,6 +2,7 @@ package redditandroidapp.features.feed
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -41,21 +42,51 @@ class FeedActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        app_title.setContent { MdcTheme { AppTitle() } }
-        loading_header.setContent { MdcTheme { LoadingHeader() } }
-        progressBar.setContent { MdcTheme { ProgressBar() } }
-        tryagain_button.setContent { MdcTheme { TryAgainButton(false) } }
+        inputBartka()
 
-        // Todo: Fix the Try Again Button - it doesn't display!
+//        app_title.setContent { MdcTheme { AppTitle() } }
+//        loading_header.setContent { MdcTheme { LoadingHeader() } }
+//        progressBar.setContent { MdcTheme { ProgressBar() } }
+//        tryagain_button.setContent { MdcTheme { TryAgainButton(false) } }
+//
+//        // Todo: Fix the Try Again Button - it doesn't display!
+//
+//        // Initialize RecyclerView (feed items)
+//        setupRecyclerView()
+//
+//        // Fetch feed items from the back-end and load them into the view
+//        subscribeForFeedItems()
+//
+//        // Catch and handle potential update (e.g. network) issues
+//        subscribeForFeedItemsorFeedItemscribeForUpdateError()
+    }
 
-        // Initialize RecyclerView (feed items)
-        setupRecyclerView()
 
-        // Fetch feed items from the back-end and load them into the view
-        subscribeForFeedItems()
 
-        // Catch and handle potential update (e.g. network) issues
-        subscribeForUpdateError()
+    private fun inputBartka() {
+
+
+
+        printToDisplay("TEST 123")
+        printToDisplay("RAFAL OZOG")
+        printToDisplay("PRZEMEK SZUMLISNKI")
+
+        printToLog("TEST 123")
+        printToLog("RAFAL OZOG")
+        printToLog("PRZEMEK SZUMLINSKI")
+
+
+
+    }
+
+
+
+    private fun printToDisplay(text: String) {
+        text_display.setText(text)
+    }
+
+    private fun printToLog(text: String) {
+        Log.d("BARTEK TAG", text)
     }
 
     @Composable
@@ -103,20 +134,20 @@ class FeedActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         val layoutManager = LinearLayoutManager(this)
-        main_feed_recyclerview.layoutManager = layoutManager
-        postsListAdapter = PostsListAdapter(this) { postId: Int ->
-            displayDetailedView(postId)
-        }
-        main_feed_recyclerview.adapter = postsListAdapter
-        main_feed_recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-
-                if (layoutManager.findLastVisibleItemPosition() + 1 == postsListAdapter.itemCount) {
-                    loadMoreItems()
-                }
-            }
-        })
+//        main_feed_recyclerview.layoutManager = layoutManager
+//        postsListAdapter = PostsListAdapter(this) { postId: Int ->
+//            displayDetailedView(postId)
+//        }
+//        main_feed_recyclerview.adapter = postsListAdapter
+//        main_feed_recyclerview.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+//            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+//                super.onScrollStateChanged(recyclerView, newState)
+//
+//                if (layoutManager.findLastVisibleItemPosition() + 1 == postsListAdapter.itemCount) {
+//                    loadMoreItems()
+//                }
+//            }
+//        })
     }
 
     private fun loadMoreItems() {
@@ -205,7 +236,7 @@ class FeedActivity : AppCompatActivity() {
     private fun setupContentLoadedView() {
         // Hide the loading view
         loading_container.visibility = View.GONE
-        appbar_container.visibility = View.VISIBLE
+//        appbar_container.visibility = View.VISIBLE
 
         // Setup refresh button
         btn_refresh.setOnClickListener{
