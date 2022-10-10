@@ -44,6 +44,8 @@ class FeedActivity : AppCompatActivity() {
 
         inputBartka(24)
 
+        setupButtons()
+
 //        app_title.setContent { MdcTheme { AppTitle() } }
 //        loading_header.setContent { MdcTheme { LoadingHeader() } }
 //        progressBar.setContent { MdcTheme { ProgressBar() } }
@@ -60,6 +62,28 @@ class FeedActivity : AppCompatActivity() {
 //        // Catch and handle potential update (e.g. network) issues
 //        subscribeForFeedItemsorFeedItemscribeForUpdateError()
     }
+
+    private fun setupButtons() {
+
+
+        red_button.setOnClickListener {
+
+            printToDisplay("RED")
+
+        }
+
+        green_button.setOnClickListener {
+
+            printToDisplay("GREEN")
+
+        }
+
+        RUDY_button.setOnClickListener {
+
+            printToDisplay("RUDY")
+        }
+    }
+
 
 
 
