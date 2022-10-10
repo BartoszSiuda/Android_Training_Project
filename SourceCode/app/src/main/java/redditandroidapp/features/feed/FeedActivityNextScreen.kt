@@ -21,7 +21,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_mainnextscreen.*
+import kotlinx.android.synthetic.main.activity_mainnextscreen.website_view
 import kotlinx.android.synthetic.main.appbar.*
+import kotlinx.android.synthetic.main.detailed_view.*
 import kotlinx.android.synthetic.main.loading_badge.*
 import redditandroidapp.R
 import redditandroidapp.features.detailedview.DetailedViewFragment
@@ -37,8 +40,18 @@ class FeedActivityNextScreen : AppCompatActivity() {
         setContentView(R.layout.activity_mainnextscreen)
 
 
+        go_back.setOnClickListener {
+
+            finish()
+        }
+
+        website_view.setOnClickListener {
+
+
+        }
+
+
+        }
+
+
     }
-
-
-
-}
