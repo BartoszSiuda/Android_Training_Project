@@ -23,6 +23,13 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="redditandroidapp.features.feed.FeedActivityNextScreen"
+            android:exported="true">
+
+        </activity>
+
+
     </application>
 
 </manifest>

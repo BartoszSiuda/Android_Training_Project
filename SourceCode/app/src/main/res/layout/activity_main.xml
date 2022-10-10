@@ -16,6 +16,18 @@
         android:layout_height="match_parent"/>
 
     <Button
+        android:id="@+id/next_screen_button"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="next screen button"
+        android:backgroundTint="#2196F3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/RUDY_button"
+        android:layout_marginBottom="20dp"/>
+
+
+    <Button
         android:id="@+id/RUDY_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"

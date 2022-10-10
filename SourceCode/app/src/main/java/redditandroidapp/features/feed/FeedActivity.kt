@@ -1,5 +1,6 @@
 package redditandroidapp.features.feed
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -17,14 +18,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.appbar.*
 import kotlinx.android.synthetic.main.loading_badge.*
 import redditandroidapp.R
 import redditandroidapp.features.detailedview.DetailedViewFragment
+
 
 // Main ('feed') view
 @AndroidEntryPoint
@@ -64,6 +64,13 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() {
+
+        next_screen_button.setOnClickListener {
+
+            val myIntent = Intent(this@FeedActivity, FeedActivityNextScreen::class.java)
+            startActivity(myIntent);
+
+        }
 
 
         red_button.setOnClickListener {
